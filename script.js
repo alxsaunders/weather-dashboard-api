@@ -1,7 +1,9 @@
 const cityNameInput = $('#cityName')
 const searchForm = $('#search-form')
-var city = "florida"
-
+const currentCond = $('#current-forecast #conditions')
+const currentCondHeader = $('#current-forecast h3')
+const dailyForecast = $('daily-forecast')
+const fiveDayHeader = $('five-day')
 
 const callOpenWeather = (city) => {
 
@@ -9,7 +11,17 @@ const callOpenWeather = (city) => {
   fetch(requestUrl)
   .then(function (response){
     if(!response.ok) {
-      
+      currentCond.innerHtml = ""
+      currentCondHeader.innerHtml = "Try again!"
+      const errorText = document.createElement("li")
+      errorText.textContent = "City not found.";
+      currentCond.appendChild(errorText);
+
+
+
+
+
+
 
     }
   })

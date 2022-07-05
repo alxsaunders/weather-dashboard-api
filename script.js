@@ -1,41 +1,25 @@
-const cityNameInput = $('#cityName')
-const searchForm = $('#search-form')
-const currentCond = $('#current-forecast #conditions')
-const currentCondHeader = $('#current-forecast h3')
-const dailyForecast = $('daily-forecast')
-const fiveDayHeader = $('five-day')
-
-const callOpenWeather = (city) => {
-
-  const requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=e81f549631dcae90bcb32f401f3a04c1"
-  fetch(requestUrl)
-  .then(function (response){
-    if(!response.ok) {
-      currentCond.innerHtml = ""
-      currentCondHeader.innerHtml = "Try again!"
-      const errorText = document.createElement("li")
-      errorText.textContent = "City not found.";
-      currentCond.appendChild(errorText);
+var input = document.querySelector('.input_text');
+var main = document.querySelector('#name');
+var temp = document.querySelector('.temp');
+var desc = document.querySelector('.desc');
+var clouds = document.querySelector('.clouds');
+var button= document.querySelector('.submit');
 
 
+button.addEventListener('click', function(name){
+fetch('https://api.openweathermap.org/data/2.5/weather?q='+input.value+'&appid=e81f549631dcae90bcb32f401f3a04c1')
+.then(response => response.json())
+.then(data => {
+  var tempValue = data['main']['temp'];
+  var nameValue = data['name'];
+  var descValue = data['weather'][0]['description'];
 
+  main.innerHTML = nameValue;
+  desc.innerHTML = "Desc - "+descValue;
+  temp.innerHTML = "Temp - "+tempValue;
+  input.value ="";
 
+})
 
-
-
-    }
-  })
-}
-
-
-
-
-
-function getApi(requestUrl) {
-  fetch(requestUrl)
-  .then(response => response.json())
-  .then(data => console.log(data));
-}
-
-
-getApi(requestUrl);
+.catch(err => alert("Wrong city name!"));
+})

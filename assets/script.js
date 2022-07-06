@@ -33,6 +33,14 @@ fetch('https://api.openweathermap.org/data/2.5/weather?&units=imperial&q='+input
   humidity.innerHTML = "Humidity: " + humValue + "%";
   wind.innerHTML = "Wind Speed: " +  Math.floor(windValue) + " MPH";
   input.value ="";
+  let citySearched = JSON.parse(localStorage.getItem("cities"))
+  cityPicked = $("").val().trim()
+  localStorage.setItem("cities", JSON.stringify(citySearched))
+  console.log(cityPicked);
+
+
+
+
 
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=minutely,hourly,alerts&units=imperial&appid=e81f549631dcae90bcb32f401f3a04c1`)
 .then(response => response.json())

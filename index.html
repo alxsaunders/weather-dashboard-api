@@ -4,65 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenWeatherMap Api</title>
+  <title>Open Weather Dashboard</title>
 </head>
-<body>
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="jumcontainer">
-      <h1 class="display-4">Weather Dashboard</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title">Search for a City:</h3>
-      <div class="input">
-        <input type="text" placeholder="Enter the city" class="input_text">
-        <input type="submit" value="Submit" class="submit">
-      </div>
-  </div>
-        <hr>
+<link rel="stylesheet" href="./assets/reset.css">
 
-      <ul class="list"></ul>
-    </div>
-  </div>
+        <!-- Bootstrap CDN link -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <!-- Font Awesome link -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="/assets/script.js">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="./Assets/Images/sun-favicon.png">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      </head>
   
-  <div class="col-9">
-    <div class="row">
-      <h1 class="name" id="name"> <p id="currentDay"></p></h1>
-      
-        <p class="temp"></p>
-        <p class="wind"></p>
-        <p class="humidity"></p>
-        <p class="uvi"></p>
-   
-     </div>
 
-   
-    <div class="row">
-      <h4 class="p-2 mt-3" id="five-day">5-Day Forecast</h4>
-                    <!-- Empty div to hold dailyCards from script.js -->
-                    <div class="d-inline-flex flex-wrap p-2" id="daily-forecast">
-
-    </div>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="script.js"></script>
-
+<body>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>

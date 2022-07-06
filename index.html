@@ -14,25 +14,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-    <div class="input">
-      <input type="text" placeholder="Enter the city" class="input_text">
-      <input type="submit" value="Submit" class="submit">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="jumcontainer">
+      <h1 class="display-4">Weather Dashboard</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col-3">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Search for a City:</h3>
+      <div class="input">
+        <input type="text" placeholder="Enter the city" class="input_text">
+        <input type="submit" value="Submit" class="submit">
+      </div>
+  </div>
+        <hr>
 
-  <div class="container">
-    <div class="card">
-      <h1 class="name" id="name"></h1>
-      <p class="temp"></p>
-      <p class="clouds"></p>
-      <p class="desc"></p>
+      <ul class="list"></ul>
     </div>
   </div>
+  
+  <div class="col-9">
+    <div class="row">
+      <h1 class="name" id="name"> <p id="currentDay"></p></h1>
+      
+        <p class="temp"></p>
+        <p class="wind"></p>
+        <p class="humidity"></p>
+        <p class="index"></p>
+   
+     </div>
+
+   
+    <div class="row">
+      <p>heyyyy</p>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="script.js"></script>
+
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="script.js"></script>
-</body>
-</html>
 </body>
 </html>

@@ -146,7 +146,7 @@ const callOpenWeather = (city) => {
 
                 let dailyArray = [];
 
-                // Clears existing cards for 5-Day Forecast container
+                // Clear existing cards for 5-Day Forecast container
                 dailyCardContainer.innerHTML = "";
 
                 // Loop to populate cards for next 5 days with information from daily openCall property
@@ -183,4 +183,29 @@ const callOpenWeather = (city) => {
 }
 })   
 }
+
+// Adds event listener to search form
+searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // Removes white space from both ends of search term
+    let searchValue = cityNameInput.value.trim("");
+
+    // Handler if user submits form with blank field
+    if (searchValue === "") {
+        currentConditionsH3.textContent = "Please enter a city!";
+        currentConditionsUl.innerHTML = "";
+        dailyCardContainer.innerHTML = "";
+        // Hides 5-day forecast if API won't be called
+        fiveDayHeader.classList.add("hidden");
+    } else {
+        // Calls API to fetch provided value
+        callOpenWeather(searchValue);
+        // Clears text in input
+        cityNameInput.value = "";
+    }
+});
+
+// Called at run time to populate search buttons for previous searches in localStorage
+updateSearchHistory();
 
